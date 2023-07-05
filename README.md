@@ -16,3 +16,25 @@ user: admin
 ## Video
 
 https://www.youtube.com/watch?v=9OfL9H6AmhQ
+
+## Example Post
+
+{
+"name": "soap",
+"quantity": 5,
+"price": 5,
+"image": "https://images.pexels.com/photos/773252/pexels-photo-773252.jpeg"
+}
+
+## Example response
+
+{
+"name": "soap",
+"quantity": 5,
+"price": 5,
+"image": "https://images.pexels.com/photos/773252/pexels-photo-773252.jpeg",
+"\_id": "64a5717077f2cb595dbddbe8",
+"createdAt": "2023-07-05T13:34:40.405Z",
+"updatedAt": "2023-07-05T13:34:40.405Z",
+"\_\_v": 0
+}

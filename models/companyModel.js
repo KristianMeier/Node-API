@@ -1,10 +1,10 @@
 const mongoose = require('mongoose')
 
-const productSchema = mongoose.Schema(
+const companiesSchema = mongoose.Schema(
   {
     name: {
       type: String,
-      required: [true, 'Please enter a product name'],
+      required: [true, 'Please enter a companies name'],
     },
     horse: {
       type: Number,
@@ -25,6 +25,6 @@ const productSchema = mongoose.Schema(
   }
 )
 
-const Product = mongoose.model('Product', productSchema)
+const Companies = mongoose.model('Companies', companiesSchema)
 
-module.exports = Product
+module.exports = Companies

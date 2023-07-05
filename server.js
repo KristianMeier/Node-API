@@ -1,6 +1,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const Product = require('./models/productModel')
+const Companies = require('./models/companyModel')
 const app = express()
 
 app.use(express.json())
@@ -9,11 +10,7 @@ app.use(express.urlencoded({ extended: false }))
 //routes
 
 app.get('/', (req, res) => {
-  res.send('Hello NODE API')
-})
-
-app.get('/blog', (req, res) => {
-  res.send('Hello Blog, My name is Devtamin')
+  res.send('Heeelloooo. This is an API for my cvr.dk mockup')
 })
 
 app.get('/products', async (req, res) => {
@@ -25,12 +22,41 @@ app.get('/products', async (req, res) => {
   }
 })
 
+app.get('/companies', async (req, res) => {
+  try {
+    const companies = await Companies.find({})
+    res.status(200).json(companies)
+  } catch (error) {
+    res.status(500).json({ message: error.message })
+  }
+})
+
 app.get('/products/:id', async (req, res) => {
   try {
     const { id } = req.params
     const product = await Product.findById(id)
     res.status(200).json(product)
   } catch (error) {
+    res.status(500).json({ message: error.message })
+  }
+})
+
+app.get('/companies/:id', async (req, res) => {
+  try {
+    const { id } = req.params
+    const company = await Companies.findById(id)
+    res.status(200).json(company)
+  } catch (error) {
+    res.status(500).json({ message: error.message })
+  }
+})
+
+app.post('/companies', async (req, res) => {
+  try {
+    const companies = await Companies.create(req.body)
+    res.status(200).json(companies)
+  } catch (error) {
+    console.log(error.message)
     res.status(500).json({ message: error.message })
   }
 })
