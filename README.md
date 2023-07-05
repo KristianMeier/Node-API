@@ -6,4 +6,13 @@ If you want to learn how the project is developed. You can visit https://www.you
 
 ### API Features
 
-The application can create, read, update and delete data, for example: products, in a database. 
+The application can create, read, update and delete data, for example: products, in a database.
+
+## MongoDb
+
+pw: admin
+user: admin
+
+## Video
+
+https://www.youtube.com/watch?v=9OfL9H6AmhQ
